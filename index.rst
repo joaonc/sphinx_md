@@ -10,6 +10,7 @@ Welcome to Sphinx MD's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   about
 
 
 Indices and tables
