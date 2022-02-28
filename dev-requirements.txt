@@ -8,6 +8,10 @@ alabaster==0.7.12
     # via
     #   -r requirements.txt
     #   sphinx
+attrs==21.4.0
+    # via
+    #   -r requirements.txt
+    #   markdown-it-py
 babel==2.9.1
     # via
     #   -r requirements.txt
@@ -34,6 +38,7 @@ distlib==0.3.4
 docutils==0.17.1
     # via
     #   -r requirements.txt
+    #   myst-parser
     #   sphinx
 filelock==3.6.0
     # via virtualenv
@@ -52,13 +57,29 @@ invoke==1.6.0
 jinja2==3.0.3
     # via
     #   -r requirements.txt
+    #   myst-parser
     #   sphinx
 livereload==2.6.3
     # via -r requirements.txt
+markdown-it-py==2.0.1
+    # via
+    #   -r requirements.txt
+    #   mdit-py-plugins
+    #   myst-parser
 markupsafe==2.1.0
     # via
     #   -r requirements.txt
     #   jinja2
+mdit-py-plugins==0.3.0
+    # via
+    #   -r requirements.txt
+    #   myst-parser
+mdurl==0.1.0
+    # via
+    #   -r requirements.txt
+    #   markdown-it-py
+myst-parser==0.17.0
+    # via -r requirements.txt
 nodeenv==1.6.0
     # via pre-commit
 packaging==21.3
@@ -86,7 +107,10 @@ pytz==2021.3
     #   -r requirements.txt
     #   babel
 pyyaml==6.0
-    # via pre-commit
+    # via
+    #   -r requirements.txt
+    #   myst-parser
+    #   pre-commit
 requests==2.27.1
     # via
     #   -r requirements.txt
@@ -101,7 +125,9 @@ snowballstemmer==2.2.0
     #   -r requirements.txt
     #   sphinx
 sphinx==4.4.0
-    # via -r requirements.txt
+    # via
+    #   -r requirements.txt
+    #   myst-parser
 sphinxcontrib-applehelp==1.0.2
     # via
     #   -r requirements.txt
@@ -134,6 +160,10 @@ tornado==6.1
     # via
     #   -r requirements.txt
     #   livereload
+typing-extensions==4.1.1
+    # via
+    #   -r requirements.txt
+    #   myst-parser
 urllib3==1.26.8
     # via
     #   -r requirements.txt
