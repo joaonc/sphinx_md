@@ -112,7 +112,7 @@ def docs_serve(c):
     server.watch('*.py', shell('make html'), delay=1)
     server.watch('_static/*', shell('make html'), delay=1)
     server.watch('_templates/*', shell('make html'), delay=1)
-    server.serve(root='_build/html')
+    server.serve(root='docs/_build/html')
 
 
 @task(help=REQUIREMENTS_TASK_HELP)
