@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 
 from invoke import Collection, task
+from livereload import Server, shell
 
 
 PROJECT_DIR = Path()
@@ -105,15 +106,13 @@ def docs_serve(c):
     """
     Start documentation local server.
     """
-    c.run('mkdocs serve')
-
-
-@task
-def docs_deploy(c):
-    """
-    Publish documentation to GitHub Pages at https://joaonc.github.io/hd_active.
-    """
-    c.run('mkdocs gh-deploy')
+    server = Server()
+    server.watch('*.rst', shell('make html'), delay=1)
+    server.watch('*.md', shell('make html'), delay=1)
+    server.watch('*.py', shell('make html'), delay=1)
+    server.watch('_static/*', shell('make html'), delay=1)
+    server.watch('_templates/*', shell('make html'), delay=1)
+    server.serve(root='_build/html')
 
 
 @task(help=REQUIREMENTS_TASK_HELP)
@@ -183,7 +182,6 @@ ns = Collection()  # Main namespace
 ns.add_task(test)
 docs = Collection('docs')
 docs.add_task(docs_serve, 'serve')
-docs.add_task(docs_deploy, 'deploy')
 lint = Collection('lint')
 lint.add_task(lint_all, 'all')
 lint.add_task(lint_black, 'black')
