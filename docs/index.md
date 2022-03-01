@@ -6,4 +6,5 @@
 
 about
 my_class
+tests
 ```
