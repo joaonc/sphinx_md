@@ -5,4 +5,5 @@
 :caption: 'Contents:'
 
 about
+my_class
 ```
