@@ -4,3 +4,6 @@
 invoke
 pip-tools
 pre-commit
+
+# Test
+pytest

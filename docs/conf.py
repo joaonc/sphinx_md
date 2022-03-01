@@ -29,6 +29,7 @@ author = 'Joao Coelho'
 # ones.
 extensions = [
     'myst_parser',
+    'sphinx.ext.auto-doc'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
