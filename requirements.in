@@ -1,3 +1,4 @@
 livereload
 myst-parser
 sphinx
+sphinx-autodoc-typehints
