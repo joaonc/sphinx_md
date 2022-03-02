@@ -1,6 +1,8 @@
 """
 Docstring for the test module.
 """
+import pytest
+
 from my_class import MyClass
 
 
@@ -12,6 +14,17 @@ def _is_ok(my_class: MyClass) -> bool:
     :param my_class: An instance of `MyClass`.
     """
     return my_class.is_ok()
+
+
+@pytest.fixture
+def some_fixture(request):
+    """
+    A pytest fixture.
+
+    :param request: `pytest`'s `request` object.
+    :return: Nothing
+    """
+    pass
 
 
 def test_something():
@@ -38,3 +51,36 @@ class TestMyClass:
         Tests that it's not ok.
         """
         assert MyClass(0, 'ok').is_ok() is False
+
+
+class TestAnother:
+    """
+    Another class with tests.
+    """
+
+    def test_using_fixture(self, some_fixture):
+        """
+        This test case uses a `pytest` fixture.
+        """
+        pass
+
+    @pytest.mark.parametrize('color', ['red', 'green'])
+    def test_parametrize(self, color):
+        """
+        Using `pytest`'s `parametrize`, which runs the test case multiple times with different parameter values.
+        """
+        pass
+
+    @pytest.mark.parametrize('color', ['yellow', 'blue'])
+    def test_fixture_and_parameterize(self, some_fixture, color):
+        """
+        Using both a `pytest` fixture and `parametrized`.
+        """
+        pass
+
+    @pytest.mark.pri1
+    def test_mark(self):
+        """
+        Test case with a `pytest` `mark`.
+        """
+        pass
