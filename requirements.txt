@@ -63,10 +63,13 @@ sphinx==4.4.0
     #   -r requirements.in
     #   myst-parser
     #   sphinx-autodoc-typehints
+    #   sphinxcontrib-autodoc-filterparams
 sphinx-autodoc-typehints==1.17.0
     # via -r requirements.in
 sphinxcontrib-applehelp==1.0.2
     # via sphinx
+sphinxcontrib-autodoc-filterparams==0.0.1
+    # via -r requirements.in
 sphinxcontrib-devhelp==1.0.2
     # via sphinx
 sphinxcontrib-htmlhelp==2.0.0

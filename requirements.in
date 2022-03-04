@@ -2,3 +2,4 @@ livereload
 myst-parser
 sphinx
 sphinx-autodoc-typehints
+sphinxcontrib-autodoc-filterparams

@@ -10,7 +10,6 @@ REQUIREMENTS_MAIN = 'main'
 REQUIREMENTS_FILES = {
     REQUIREMENTS_MAIN: 'requirements',
     'dev': 'dev-requirements',
-    'docs': 'docs-requirements',
 }
 """
 Requirements files.
