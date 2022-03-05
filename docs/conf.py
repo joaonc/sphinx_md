@@ -31,6 +31,7 @@ extensions = [
     'myst_parser',
     'sphinx.ext.autodoc',
     'sphinx_autodoc_typehints',
+    'sphinxcontrib_autodoc_filterparams',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -59,3 +60,21 @@ html_static_path = ['docs/_static']
 myst_enable_extensions = [
     'colon_fence',
 ]
+
+
+# -- Callbacks  ------------------------------------------------------------
+def sphinxcontrib_autodoc_filterparams(func, param):
+    """
+    Filter parameters from functions/methods in documentation.
+    This is called once per parameter per function.
+
+    https://github.com/erikkemperman/sphinxcontrib-autodoc-filterparams
+
+    :param func: Current function.
+    :param param: Current parameter.
+    :return: `True` then the parameter will be documented, otherwise it will be excluded.
+    """
+    # TODO: Resolve https://github.com/erikkemperman/sphinxcontrib-autodoc-filterparams/issues/3
+    # TODO: Also split by '/' for MacOS/Linux
+    module_name = str(sys.modules[func.__module__]).split('\\')[-1]
+    return not (module_name.startswith('test_') and func.__name__.startswith('test_'))
